@@ -1,0 +1,13 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+
+@tailwind components;
+
+html {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@tailwind utilities;
