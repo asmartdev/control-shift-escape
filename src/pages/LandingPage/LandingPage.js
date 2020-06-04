@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class LandingPage extends Component {
   constructor() {
     super();
     this.state = {
       value: "",
-      redirectToRoom: false
+      redirectToRoom: false,
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value.toLowerCase() });
   }
 
   handleSubmit(event) {
@@ -36,7 +36,7 @@ class LandingPage extends Component {
         <div className="mt-32 flex justify-center">
           <div>
             <p className="mb-4 text-center">Enter room code</p>
-            <form onSubmit={e => this.handleSubmit(e)}>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
               <input
                 className="p-2 border border-gray-400 uppercase font-semibold text-center w-full mb-4"
                 value={this.state.value}

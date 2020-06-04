@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { getLocalRoom } from "../../services/roomService";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import moment from "moment";
@@ -13,13 +12,13 @@ class RoomPage extends Component {
       room: {
         title: "",
         author: "",
-        question: ""
+        question: "",
       },
       endTime: moment(),
       timeLeft: 0,
       answer: "",
       escaped: false,
-      timeRunning: false
+      timeRunning: false,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -32,13 +31,11 @@ class RoomPage extends Component {
         {
           room: room,
           loaded: true,
-          endTime: moment()
-            .add(room.timeLimit, "minutes")
-            .add(1, "seconds"),
+          endTime: moment().add(room.timeLimit, "minutes").add(1, "seconds"),
           timeLeft: room.timeLimit * 60,
           answer: "",
           escaped: false,
-          timeRunning: true
+          timeRunning: true,
         },
         () => {
           this.calculateTimeLeft();
@@ -109,7 +106,7 @@ class RoomPage extends Component {
               {this.state.escaped ? (
                 <React.Fragment>
                   <div className="container mx-auto py-16 lg:py-32 px-4">
-                    <h1 className="text-6xl font-extrabold text-indigo-700 text-center">
+                    <h1 className="text-6xl font-bold text-indigo-700 text-center">
                       You escaped!
                     </h1>
                     <div className="mt-16">
@@ -143,7 +140,7 @@ class RoomPage extends Component {
                       </p>
                     ))}
                     <h2 className="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">
-                      The Final Puzzle
+                      Final Puzzle
                     </h2>
                     <p className="whitespace-pre-wrap">
                       {this.state.room.finalPuzzle.question}
@@ -163,7 +160,7 @@ class RoomPage extends Component {
                         </p>
                       </div>
                       <div className="flex-1">
-                        <form onSubmit={e => this.handleSubmit(e)}>
+                        <form onSubmit={(e) => this.handleSubmit(e)}>
                           <input
                             className="p-2 border border-indigo-200 uppercase font-semibold text-center w-full mb-4 shadow-inner"
                             value={this.state.answer}
