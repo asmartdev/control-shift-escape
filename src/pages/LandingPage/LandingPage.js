@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class LandingPage extends Component {
   constructor() {
@@ -33,8 +33,20 @@ class LandingPage extends Component {
           <br />
           <span className="text-indigo-700 font-bold">Escape</span>
         </h1>
-        <div className="mt-32 flex justify-center">
-          <div>
+        <div className="mt-40">
+          <h3 className="text-2xl mb-8">Rooms</h3>
+          <div className="block w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <Link to={`/rooms/crunch`}>
+                <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
+                  <div className="flex-1 text-lg font-semibold text-center px-4 py-2">
+                    Number Crunching
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+          {/* <div className="justify-center">
             <p className="mb-4 text-center">Enter room code</p>
             <form onSubmit={(e) => this.handleSubmit(e)}>
               <input
@@ -51,7 +63,7 @@ class LandingPage extends Component {
                 Start
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     );
