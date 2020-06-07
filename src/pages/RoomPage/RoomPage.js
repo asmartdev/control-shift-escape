@@ -98,9 +98,13 @@ class RoomPage extends Component {
                 </h1>
                 <p className="text-indigo-700 text-sm mt-2 border-b border-gray-400 pb-12">
                   Room created by{" "}
-                  <span className="font-semibold">
-                    {this.state.room.author}
-                  </span>
+                  <a
+                    href={`http://github.com/${this.state.room.author.githubUsername}`}
+                  >
+                    <span className="font-semibold border-b border-indigo-700">
+                      {this.state.room.author.name}
+                    </span>
+                  </a>
                 </p>
               </div>
               {this.state.escaped ? (

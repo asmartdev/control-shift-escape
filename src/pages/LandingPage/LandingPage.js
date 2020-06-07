@@ -33,14 +33,25 @@ class LandingPage extends Component {
           <br />
           <span className="text-indigo-700 font-bold">Escape</span>
         </h1>
-        <div className="mt-40">
-          <h3 className="text-2xl mb-8">Rooms</h3>
+        <div className="mt-32 border-t border-gray-400 ">
+          <h3 className="text-2xl font-semibold text-indigo-700 font-serif mt-16 mb-4">
+            About
+          </h3>
+          <p className="whitespace-pre-wrap">
+            Each room contains a series of small tasks, which will give clues
+            for the final puzzle. Solving the final puzzle will give you the
+            answer - enter it and escape before the time runs out!
+          </p>
+          <h3 className="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">
+            Rooms
+          </h3>
           <div className="block w-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <Link to={`/rooms/crunch`}>
                 <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
-                  <div className="flex-1 text-lg font-semibold text-center px-4 py-2">
-                    Number Crunching
+                  <div className="flex-1 text-center px-4 py-2">
+                    <p className="font-semibold text-lg">Number Crunching</p>
+                    <p className="text-sm text-gray-700">45 minutes</p>
                   </div>
                 </div>
               </Link>
