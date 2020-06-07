@@ -138,10 +138,20 @@ class RoomPage extends Component {
                       Tasks
                     </h2>
                     {this.state.room.tasks.map((task, i) => (
-                      <p className="whitespace-pre-wrap mb-4" key={i}>
-                        <span className="font-bold">{i + 1}. </span>
-                        {task.question}
-                      </p>
+                      <div className="whitespace-pre-wrap mb-4" key={i}>
+                        <p className="font-semibold">Task {i + 1}</p>
+                        <div className="h-full">
+                          {task.reference && (
+                            <div className="bg-white shadow rounded py-4 px-8 inline-block my-4 md:my-0 md:ml-6 md:float-right">
+                              <p className="font-semibold text-indigo-700 text-sm mb-2">
+                                Reference sheet
+                              </p>
+                              <p>{task.reference}</p>
+                            </div>
+                          )}
+                          <p>{task.question}</p>
+                        </div>
+                      </div>
                     ))}
                     <h2 className="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">
                       Final Puzzle
