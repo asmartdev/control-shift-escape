@@ -7,10 +7,15 @@ const PageWrapper = (props) => {
     <div className="bg-gray-100 min-h-screen border-t-4 border-indigo-700">
       <div className="container mx-auto">
         <div className="h-10 flex justify-between pt-3">
-          <span className="text-sm bg-indigo-700 text-white px-4 py-2 rounded-b ml-4 -mt-3">
-            <Link to={`/`}>
-              Control Shift <span className="font-semibold">Escape</span>
-            </Link>
+          <span className="ml-4 -mt-1">
+            <span className="text-sm bg-indigo-700 text-white px-4 py-3 rounded-b">
+              <Link to={`/`}>
+                Control Shift <span className="font-semibold">Escape</span>
+              </Link>
+            </span>
+            <span className="text-indigo-700 ml-2 uppercase text-sm font-semibold">
+              Beta
+            </span>
           </span>
           <span>
             <a href="https://github.com/asmartdev/control-shift-escape">

@@ -93,7 +93,7 @@ class RoomPage extends Component {
           <React.Fragment>
             <div className="container mx-auto py-20 px-4">
               <div className="text-center">
-                <h1 className="text-4xl font-bold text-gray-800 font-serif">
+                <h1 className="text-4xl font-semibold text-gray-800 font-serif">
                   {this.state.room.title}
                 </h1>
                 <p className="text-indigo-700 text-sm mt-2 border-b border-gray-400 pb-12">
@@ -110,12 +110,12 @@ class RoomPage extends Component {
               {this.state.escaped ? (
                 <React.Fragment>
                   <div className="container mx-auto py-16 lg:py-32 px-4">
-                    <h1 className="text-6xl font-bold text-indigo-700 text-center">
+                    <h1 className="text-6xl font-semibold text-indigo-700 text-center">
                       You escaped!
                     </h1>
                     <div className="mt-16">
                       <div>
-                        <p className="mb-2 font-bold text-center">
+                        <p className="mb-2 font-semibold text-center">
                           Time remaining
                         </p>
                         <p className="mb-4 text-center">
@@ -138,7 +138,7 @@ class RoomPage extends Component {
                       Tasks
                     </h2>
                     {this.state.room.tasks.map((task, i) => (
-                      <div className="whitespace-pre-wrap mb-4" key={i}>
+                      <div className="whitespace-pre-wrap mb-8" key={i}>
                         <p className="font-semibold">Task {i + 1}</p>
                         <div className="h-full">
                           {task.reference && (

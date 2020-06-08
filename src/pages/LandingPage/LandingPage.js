@@ -31,7 +31,7 @@ class LandingPage extends Component {
           <br />
           Shift
           <br />
-          <span className="text-indigo-700 font-bold">Escape</span>
+          <span className="text-indigo-700 font-semibold">Escape</span>
         </h1>
         <div className="mt-32 border-t border-gray-400 ">
           <h3 className="text-2xl font-semibold text-indigo-700 font-serif mt-16 mb-4">
