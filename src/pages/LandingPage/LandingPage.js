@@ -46,7 +46,7 @@ class LandingPage extends Component {
             Rooms
           </h3>
           <div className="flex flex-wrap">
-          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4" >
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 sm:mr-4" >
               <Link to={`/rooms/crunch`}>
                 <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
                   <div className="flex-1 text-center px-4 py-2">
