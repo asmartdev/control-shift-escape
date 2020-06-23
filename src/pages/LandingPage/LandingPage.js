@@ -45,8 +45,8 @@ class LandingPage extends Component {
           <h3 className="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">
             Rooms
           </h3>
-          <div className="block w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="flex flex-wrap">
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 sm:mr-4" >
               <Link to={`/rooms/crunch`}>
                 <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
                   <div className="flex-1 text-center px-4 py-2">
@@ -55,7 +55,17 @@ class LandingPage extends Component {
                   </div>
                 </div>
               </Link>
-            </div>
+          </div>
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
+              <Link to={`/rooms/bitwiseass`}>
+                <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
+                  <div className="flex-1 text-center px-4 py-2">
+                    <p className="font-semibold text-lg">Bitwiseass</p>
+                    <p className="text-sm text-gray-700">45 minutes</p>
+                  </div>
+                </div>
+              </Link>
+          </div>
           </div>
           {/* <div className="justify-center">
             <p className="mb-4 text-center">Enter room code</p>

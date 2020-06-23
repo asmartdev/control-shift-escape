@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getLocalRoom } from "../../services/roomService";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import moment from "moment";
+import sha256 from 'crypto-js/sha256';
 
 class RoomPage extends Component {
   constructor() {
@@ -74,6 +75,9 @@ class RoomPage extends Component {
   handleSubmit(event) {
     event.preventDefault();
     if (
+      sha256(this.state.answer.toLowerCase()).toString() ===
+      this.state.room.finalPuzzle.answer.toLowerCase()
+      ||
       this.state.answer.toLowerCase() ===
       this.state.room.finalPuzzle.answer.toLowerCase()
     ) {
