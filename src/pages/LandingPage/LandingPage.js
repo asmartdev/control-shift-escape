@@ -66,6 +66,16 @@ class LandingPage extends Component {
                 </div>
               </Link>
           </div>
+          <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4">
+              <Link to={`/rooms/simplemath`}>
+                <div className="w-full shadow rounded px-4 h-24 bg-white items-center flex items-center">
+                  <div className="flex-1 text-center px-4 py-2">
+                    <p className="font-semibold text-lg">Simple Math Operations</p>
+                    <p className="text-sm text-gray-700">45 minutes</p>
+                  </div>
+                </div>
+              </Link>
+          </div>
           </div>
           {/* <div className="justify-center">
             <p className="mb-4 text-center">Enter room code</p>
