@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getLocalRoom } from "../../services/roomService";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import moment from "moment";
-import sha256 from 'crypto-js/sha256';
+import sha256 from "crypto-js/sha256";
 
 class RoomPage extends Component {
   constructor() {
@@ -76,10 +76,9 @@ class RoomPage extends Component {
     event.preventDefault();
     if (
       sha256(this.state.answer.toLowerCase()).toString() ===
-      this.state.room.finalPuzzle.answer.toLowerCase()
-      ||
+        this.state.room.finalPuzzle.answer.toLowerCase() ||
       this.state.answer.toLowerCase() ===
-      this.state.room.finalPuzzle.answer.toLowerCase()
+        this.state.room.finalPuzzle.answer.toLowerCase()
     ) {
       this.setState({ escaped: true, timeRunning: false });
     } else {
@@ -144,17 +143,15 @@ class RoomPage extends Component {
                     {this.state.room.tasks.map((task, i) => (
                       <div className="whitespace-pre-wrap mb-8" key={i}>
                         <p className="font-semibold">Task {i + 1}</p>
-                        <div className="h-full">
-                          {task.reference && (
-                            <div className="bg-white shadow rounded py-4 px-8 inline-block my-4 md:my-0 md:ml-6 md:float-right">
-                              <p className="font-semibold text-indigo-700 text-sm mb-2">
-                                Reference sheet
-                              </p>
-                              <p>{task.reference}</p>
-                            </div>
-                          )}
-                          <p>{task.question}</p>
-                        </div>
+                        {task.reference && (
+                          <alli-card class="inline-block my-4 md:my-0 md:ml-6 md:float-right">
+                            <p className="font-semibold text-indigo-700 text-sm mb-2">
+                              Reference sheet
+                            </p>
+                            <p>{task.reference}</p>
+                          </alli-card>
+                        )}
+                        <p>{task.question}</p>
                       </div>
                     ))}
                     <h2 className="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">
