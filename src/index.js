@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/tailwind.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { applyPolyfills, defineCustomElements } from "alli/loader";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
@@ -10,3 +11,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
