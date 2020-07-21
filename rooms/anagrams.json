@@ -1,0 +1,21 @@
+{
+    "title": "Anagrams",
+    "author": {
+        "name": "James Parker",
+        "githubUsername": "James226"
+    },
+    "timeLimit": 45,
+    "introduction": "In England, I used to waste hour upon hour doing newspaper crosswords. As crossword fans will know, English cryptic crosswords have a totally different feel to their American counterparts: most clues involve punning or word play, and there are lots of anagrams to work through. For example, a recent Guardian crossword had:\n\nMost unusual form of arrest (6)\n\nThe hint is the phrase ‘form of,’ indicating that we’re looking for an anagram. Sure enough ‘arrest’ has six letters, and can be arranged nicely into ‘rarest,’ meaning ‘most unusual.’ (Other anagrams include raster, raters, Sartre, and starer)",
+    "tasks": [
+        {
+            "question": "anagram\n/ˈanəɡram/\n\nnoun\na word, phrase, or name formed by rearranging the letters of another, such as 'spar', formed from 'rasp'.\n\nWrite a program which generates all possible variants of the word 'spar' (i.e. asrp, pras, arsp)"
+        },
+        {
+            "question": "Enhance your previous solution to generate valid words using the word list provided below:\n\nhttps://github.com/dwyl/english-words/raw/master/words.zip"
+        }
+    ],
+    "finalPuzzle": {
+        "question": "The final answer is an anagram of: 'het ecak si a eil'",
+        "answer": "b996e7eaf8a2b199279360a76b18ab92c4191d84b37e1243c90cd1d7bb966567"
+    }
+}

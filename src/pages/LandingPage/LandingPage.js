@@ -17,6 +17,11 @@ const rooms = [
     id: "simplemath",
     time: 45,
   },
+  {
+    name: "Anagrams",
+    id: "anagrams",
+    time: 45,
+  },
 ];
 
 class LandingPage extends Component {
