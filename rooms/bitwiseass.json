@@ -8,7 +8,7 @@
     "introduction": "In this room there are 3 seemingly unconnected coding puzzles to solve.\nHowever, due to this room's creator's urge to use bitwise operators at every opportunity possible, the solutions hold the following properties: \nsolution1 ^ solution2 = solution3\nsolution2 ^ solution3 = solution1\nsolution1 ^ solution3 = solution2",
     "tasks": [
         {
-            "question": "A common method for 'securely' identifying that a user is who they say they are is to ask them for a number of random characters from their account number. For example, if their account number was 123987, they may be asked for the 2nd, 3rd, and 6th characters; the expected reply would be: 237.\n\nYou have, by some means, come across the input logs for a user's (let's say they are a spy, to make ourselves feel better in this scenarios) previous logins to the system.\n\nThis 'spy' always accurately enters what is asked from them. And the numbers are always asked for in the order they appear in the account number. So the first number will always appear first in the account number, the second will appear somewhere after that, and the third after that number.\n\nWe know that account numbers are 9 digits long. What is that 'spy''s account number?\n\nLog.txt:\n270\n570\n610\n425\n845\n657\n413\n847\n621\n820\n410\n427\n421\n643\n613\n862\n841\n423\n210\n250\n153\n850\n703\n840\n642\n470\n420\n417\n865\n823",
+            "question": "A common method for 'securely' identifying that a user is who they say they are is to ask them for a number of random characters from their account number. For example, if their account number was 123987, they may be asked for the 2nd, 3rd, and 6th characters; the expected reply would be: 237.\n\nYou have, by some means, come across the input logs for a user's (let's say they are a spy, to make ourselves feel better in this scenario) previous logins to the system.\n\nThis 'spy' always accurately enters what is asked from them. And the numbers are always asked for in the order they appear in the account number. So the first number will always appear first in the account number, the second will appear somewhere after that, and the third after that number.\n\nWe know that account numbers are 9 digits long. What is that 'spy''s account number?\n\nLog.txt:\n270\n570\n610\n425\n845\n657\n413\n847\n621\n820\n410\n427\n421\n643\n613\n862\n841\n423\n210\n250\n153\n850\n703\n840\n642\n470\n420\n417\n865\n823",
             "answer": ""
         },
         {
@@ -20,7 +20,7 @@
         }
     ],
     "finalPuzzle": {
-        "question": "The final answer is in the form of xxxx-yyyy-zzzz. Where xxxx, yyyy, and zzzz are the first four digits of task 1, 2, and 3 respectively.",
+        "question": "The final answer is in the form of 'xxxx-yyyy-zzzz'. Where xxxx, yyyy, and zzzz are the last four digits of task 1, 2, and 3's solutions respectively.",
         "answer": "fd5350a59b8ffe041c291a76c60269d953bdde5de309086e932e6ac78addd125"
     }
 }
