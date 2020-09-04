@@ -12,9 +12,13 @@
             </span>
             <span class="text-indigo-700 ml-2 uppercase text-sm font-semibold">Beta</span>
           </span>
-          <span>
+          <span class="-mt-1">
             <a href="https://github.com/asmartdev/control-shift-escape">
-              <font-awesome-icon :icon="['fab', 'github']" class="h-5 w-5 text-indigo-700" />
+              <font-awesome-icon
+                :icon="['fab', 'github']"
+                class="h-5 w-5 text-indigo-700"
+                size="lg"
+              />
             </a>
           </span>
         </div>
