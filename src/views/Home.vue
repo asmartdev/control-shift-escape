@@ -8,7 +8,7 @@
     </h1>
     <div class="mt-32 border-t border-gray-400">
       <h3 class="text-2xl font-semibold text-indigo-700 font-serif mt-16 mb-4">About</h3>
-      <p class="whitespace-pre-wrap">
+      <p>
         Each room contains a series of small tasks, which will give clues
         for the final puzzle. Solving the final puzzle will give you the
         answer - enter it and escape before the time runs out!
@@ -22,8 +22,8 @@
             <router-link :to="'/rooms/' + room.id">
               <alli-card class="h-24 flex items-center">
                 <div class="text-center flex-1">
-                  <p class="font-semibold text-lg">{{room.name}}</p>
-                  <p class="text-sm text-gray-700">{{room.time}} minutes</p>
+                  <p class="font-semibold text-lg">{{room.title}}</p>
+                  <p class="text-sm text-gray-700">{{room.timeLimit}} minutes</p>
                 </div>
               </alli-card>
             </router-link>
@@ -39,29 +39,43 @@ export default {
   name: "Home",
   data() {
     return {
-      rooms: [
-        {
-          name: "Number Crunching",
-          id: "crunch",
-          time: 45,
-        },
-        {
-          name: "Bitwiseass",
-          id: "bitwiseass",
-          time: 45,
-        },
-        {
-          name: "Simple Math Operations",
-          id: "simplemath",
-          time: 45,
-        },
-        {
-          name: "Anagrams",
-          id: "anagrams",
-          time: 45,
-        },
-      ],
+      rooms: [],
     };
+  },
+  methods: {
+    getRoomIds() {
+      return require
+        .context("../rooms/", true, /\.mdx$/)
+        .keys()
+        .map((k) =>
+          k
+            .substr(1)
+            .replace(/\/index\.mdx$/, "")
+            .replace("/", "")
+        );
+    },
+    loadRooms() {
+      var roomIds = this.getRoomIds();
+      var roomList = [];
+
+      roomIds.forEach((room) => {
+        var roomData = require(`../rooms/${room}/index.mdx`);
+        roomList.push({
+          id: room,
+          title: roomData.metadata.title,
+          created: roomData.metadata.created,
+          timeLimit: roomData.metadata.timeLimit,
+        });
+      });
+      var sortedRooms = roomList.sort((a, b) =>
+        a.created.localeCompare(b.created)
+      );
+      return sortedRooms;
+    },
+  },
+  mounted() {
+    var rooms = this.loadRooms();
+    this.rooms = rooms;
   },
 };
 </script>

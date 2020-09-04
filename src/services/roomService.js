@@ -1,4 +1,4 @@
-const getLocalRoom = roomCode => {
+const getLocalRoom = (roomCode) => {
   try {
     var file = require(`../../rooms/${roomCode}.json`);
   } catch (e) {
