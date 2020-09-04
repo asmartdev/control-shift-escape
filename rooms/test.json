@@ -4,7 +4,7 @@
         "name": "Amber Smart",
         "githubUsername": "asmartdev"
     },
-    "timeLimit": 5,
+    "timeLimit": 1,
     "introduction": "This is an example room",
     "tasks": [
         {
