@@ -25,7 +25,10 @@
         <div class="mt-16 mb-32">
           <h2 class="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">Introduction</h2>
           <p class="whitespace-pre-wrap">{{introduction}}</p>
-          <h2 class="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">Tasks</h2>
+          <MDXProvider :components="components">
+            <component :is="roomMarkdown"></component>
+          </MDXProvider>
+          <!-- <h2 class="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">Tasks</h2>
           <div v-for="(task, i) in tasks" :key="i">
             <div class="whitespace-pre-wrap mb-8">
               <p class="font-semibold">Task {{i + 1}}</p>
@@ -37,9 +40,9 @@
               </div>
               <p>{{task.question}}</p>
             </div>
-          </div>
-          <h2 class="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">Final Puzzle</h2>
-          <p class="whitespace-pre-wrap">{{finalPuzzle.question}}</p>
+          </div>-->
+          <!-- <h2 class="text-2xl font-semibold text-indigo-700 font-serif mt-8 mb-4">Final Puzzle</h2>
+          <p class="whitespace-pre-wrap">{{finalPuzzle.question}}</p>-->
         </div>
       </div>
     </div>
@@ -71,13 +74,22 @@
 </template>
 
 <script>
-import { getLocalRoom } from "../services/roomService";
 import sha256 from "crypto-js/sha256";
+
+import Heading1 from "../components/Heading1";
+import Heading2 from "../components/Heading2";
+import Link from "../components/Link";
+import CodeBlock from "../components/CodeBlock";
+
+import { MDXProvider } from "@mdx-js/vue";
 
 export default {
   name: "Room",
   props: {
     roomId: String,
+  },
+  components: {
+    MDXProvider,
   },
   data() {
     return {
@@ -87,12 +99,20 @@ export default {
       timeLeft: 0,
       introduction: "",
       tasks: [],
-      finalPuzzle: {
-        question: "",
-        answer: "",
-      },
+      finalAnswer: "",
       answer: "",
       timerInterval: null,
+      components: {
+        h1: () => Heading1,
+        h2: () => Heading2,
+        p: () => ({
+          render() {
+            return <p class="mb-8">{this.$slots.default}</p>;
+          },
+        }),
+        a: () => Link,
+        code: () => CodeBlock,
+      },
     };
   },
   computed: {
@@ -105,24 +125,26 @@ export default {
 
       return `${minutes}:${seconds}`;
     },
+    roomMarkdown() {
+      return () => import(`../rooms/${this.roomId}/index.mdx`);
+    },
   },
   methods: {
     loadRoom() {
-      var room = getLocalRoom(this.roomId);
-
-      this.title = room.title;
-      this.author = room.author;
-      this.introduction = room.introduction;
-      this.tasks = room.tasks;
-      this.finalPuzzle = room.finalPuzzle;
-      this.timeLeft = room.timeLimit * 60;
+      this.roomMarkdown().then((room) => {
+        this.title = room.metadata.title;
+        this.author = room.metadata.author;
+        this.introduction = room.metadata.introduction;
+        this.finalAnswer = room.metadata.finalAnswer;
+        this.timeLeft = room.metadata.timeLimit * 60;
+      });
     },
     startTimer() {
       this.timerInterval = setInterval(() => (this.timeLeft -= 1), 1000);
     },
     checkAnswer(answer) {
       var userAnswerLower = answer.toLowerCase();
-      var finalAnswerLower = this.finalPuzzle.answer.toLowerCase();
+      var finalAnswerLower = this.finalAnswer.toLowerCase();
 
       if (
         sha256(userAnswerLower).toString() === finalAnswerLower ||

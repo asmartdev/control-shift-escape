@@ -5,4 +5,14 @@ module.exports = {
       title: "Control Shift Escape",
     },
   },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /.mdx?$/,
+          use: ["babel-loader", "@mdx-js/vue-loader"],
+        },
+      ],
+    },
+  },
 };

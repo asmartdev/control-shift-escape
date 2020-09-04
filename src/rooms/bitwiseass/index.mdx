@@ -1,0 +1,91 @@
+export const metadata = {
+    title: "Bitwiseass",
+    author: {
+        name: "Gareth Freeman",
+        githubUsername: "gfreemansainsburys"
+    },
+    timeLimit: 45,
+    introduction: "In this room there are 3 seemingly unconnected coding puzzles to solve.\nHowever, due to this room's creator's urge to use bitwise operators at every opportunity possible, the solutions hold the following properties: \nsolution1 ^ solution2 = solution3\nsolution2 ^ solution3 = solution1\nsolution1 ^ solution3 = solution2",
+    finalAnswer: "fd5350a59b8ffe041c291a76c60269d953bdde5de309086e932e6ac78addd125"
+}
+
+# Tasks
+
+## Task 1
+A common method for 'securely' identifying that a user is who they say they are is to ask them for a number of random characters from their account number. For example, if their account number was 123987, they may be asked for the 2nd, 3rd, and 6th characters; the expected reply would be: 237.
+
+You have, by some means, come across the input logs for a user's (let's say they are a spy, to make ourselves feel better in this scenarios) previous logins to the system.
+
+This 'spy' always accurately enters what is asked from them. And the numbers are always asked for in the order they appear in the account number. So the first number will always appear first in the account number, the second will appear somewhere after that, and the third after that number.
+
+We know that account numbers are 9 digits long. What is that 'spy''s account number?
+
+Log.txt:
+```
+270
+570
+610
+425
+845
+657
+413
+847
+621
+820
+410
+427
+421
+643
+613
+862
+841
+423
+210
+250
+153
+850
+703
+840
+642
+470
+420
+417
+865
+823
+```
+
+## Task 2
+The five adjacent digits in the 1000-digit number that have the greatest product minus their sum are:
+8,9,9,8,8 => (product) - (sum) => 8 x 9 x 9 x 8 x 8 - (8 + 9 + 9 + 8 + 8) = 41472 - 42 = 41430
+```
+43873515619204199673242058226972552374069517315952
+81875644902323070466195576310826742428880107612824
+74809729197377010147511069399331923228873363791121
+43623408917808879237983971244786690760008884936293
+52282179019188063805910499107706745233627802823691
+26153118900730041455515943767834645400828838275873
+52797735597170156332548238513370596295454197338150
+88968697456685520839138467816257023884201469622058
+45400278141263097534855656160059626785207342882637
+96470950945376427297580760180408477806507234061211
+54756191563101437589668308145540548689988121860735
+36113915878759752318237194075508499938856707176980
+28296520301720367624486496790435841056428418344234
+31548890465424331552252224668004005342265676240786
+27253281625385224084000889924078853574268305051210
+06506704359562951100692449156233180756618086675189
+45678848925530917577986333851024944838358582337851
+30910662918764431685329547721611195228530789256326
+60263900991237441218258923199657532022000030553629
+78552646566308854746372875260990843720562752666270
+```
+
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product minus their sum. What is the value of their product minus their sum?
+
+## Task 3
+The greatest common divisor of two numbers is the largest integer which divides both numbers - the greatest common divisor of 8 and 12 is 4.
+
+Find the greatest common divisor of 14125243668050641 and 5087442243259493.
+
+# Final Puzzle
+The final answer is in the form of xxxx-yyyy-zzzz. Where xxxx, yyyy, and zzzz are the first four digits of task 1, 2, and 3 respectively.
