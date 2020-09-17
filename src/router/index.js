@@ -32,7 +32,7 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   routes,
-  scrollBehavior(savedPosition) {
+  scrollBehavior(from,to,savedPosition) {
     if (savedPosition) {
       return savedPosition;
     } else {
